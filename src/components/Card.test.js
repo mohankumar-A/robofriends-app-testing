@@ -5,3 +5,7 @@ import Card from './Card';
 it('renders without crashing', () => {
   expect(shallow(<Card/>)).toMatchSnapshot();
 });
+
+it("expect to render card component", () => {
+  expect(shallow(<Card/>).length).toBe(1);
+})

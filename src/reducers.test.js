@@ -29,14 +29,14 @@ describe('searchRobots reducer', () => {
 
 const initialStateRobots = {
   robots: [],
-  isPending: true
+  isPending: false
 }
 describe('requestRobots reducer', () => {
   it('should return the initial state', () => {
     expect(reducers.requestRobots(undefined, {})).toEqual(
       {
         robots: [],
-        isPending: true
+        isPending: false
       }
     )
   })
@@ -44,8 +44,7 @@ describe('requestRobots reducer', () => {
   it('should handle REQUEST_ROBOTS_PENDING action', () => {
     expect(
       reducers.requestRobots(initialStateRobots, {
-        type: types.REQUEST_ROBOTS_PENDING,
-        payload: {isPending: true}
+        type: types.REQUEST_ROBOTS_PENDING
       })
     ).toEqual(
       {
@@ -85,7 +84,7 @@ describe('requestRobots reducer', () => {
       {
         error: 'NOOO',
         robots: [],
-        isPending: true
+        isPending: false
       }
     )
   })
